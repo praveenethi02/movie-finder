@@ -1,0 +1,198 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed,#0ea5e9);
+    background-size:300% 300%;
+    animation:bgMove 10s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Glass Card */
+body::before{
+    content:"Movie Finder";
+    position:absolute;
+    top:40px;
+    font-size:34px;
+    font-weight:700;
+    color:white;
+    letter-spacing:1px;
+}
+
+body::after{
+    content:"Search your favourite movies instantly";
+    position:absolute;
+    top:85px;
+    color:rgba(255,255,255,.85);
+    font-size:15px;
+}
+
+/* Main Container */
+body{
+    position:relative;
+}
+
+#movieName,
+button,
+#title,
+#year,
+#poster,
+#plot{
+    z-index:2;
+}
+
+input{
+    width:420px;
+    max-width:90%;
+    padding:16px 20px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(20px);
+    color:white;
+    font-size:16px;
+    margin-top:120px;
+    transition:.3s;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+input::placeholder{
+    color:rgba(255,255,255,.7);
+}
+
+input:focus{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    background:rgba(255,255,255,.25);
+}
+
+/* Button */
+
+button{
+    margin-top:18px;
+    padding:14px 45px;
+    border:none;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(135deg,#06b6d4,#2563eb);
+    transition:.3s;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+button:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 18px 35px rgba(0,0,0,.35);
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+/* Movie Title */
+
+#title{
+    margin-top:35px;
+    color:white;
+    font-size:34px;
+    font-weight:700;
+    text-align:center;
+}
+
+/* Year */
+
+#year{
+    margin-top:8px;
+    color:#e5e7eb;
+    font-weight:400;
+    font-size:18px;
+}
+
+/* Poster */
+
+#poster{
+    width:260px;
+    max-width:90%;
+    margin-top:30px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+    transition:.4s;
+    background:white;
+}
+
+#poster:hover{
+    transform:scale(1.05);
+}
+
+/* Plot */
+
+#plot{
+    margin-top:25px;
+    width:700px;
+    max-width:90%;
+    padding:25px;
+    border-radius:20px;
+    color:white;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(18px);
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+    line-height:1.8;
+    text-align:justify;
+    font-size:16px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    body::before{
+        font-size:28px;
+        text-align:center;
+    }
+
+    body::after{
+        text-align:center;
+        width:90%;
+    }
+
+    input{
+        width:90%;
+        margin-top:140px;
+    }
+
+    #title{
+        font-size:28px;
+    }
+
+    #poster{
+        width:220px;
+    }
+
+    #plot{
+        font-size:15px;
+        padding:20px;
+    }
+
+}
