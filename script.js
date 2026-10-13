@@ -4,7 +4,7 @@ function search() {
     let inputName = document.getElementById("movieName").value.trim();
 
     if (!inputName) {
-        alert("Please enter a movie name");
+        alert("Please enter the correct movie name");
         return;
     }
 
